@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ueeuoj/5XYXA/WPTIu581BogfeOTN9KIP0NQSH9iNnNoGAMxPJqwiHob4h7vWkvxtQcSDWgYzAm5hbPv/cA24A==",
+  "dgSpecHash": "UR/GPUG5zL/qOY7znCuYkVPefiqBf5jbe2GCdOhLtZOk/MQxXP5yc/8cPPQ3lhPMpdsqfgb8JiGkjsUhRLcvYA==",
   "success": true,
   "projectFilePath": "D:\\OWN-PROJECT\\api-netcore\\api-netcore\\api-netcore.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\tranm\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.26\\microsoft.extensions.primitives.3.1.26.nupkg.sha512",
     "C:\\Users\\tranm\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
     "C:\\Users\\tranm\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
+    "C:\\Users\\tranm\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512",
     "C:\\Users\\tranm\\.nuget\\packages\\namotion.reflection\\2.0.10\\namotion.reflection.2.0.10.nupkg.sha512",
     "C:\\Users\\tranm\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Users\\tranm\\.nuget\\packages\\njsonschema\\10.7.2\\njsonschema.10.7.2.nupkg.sha512",

@@ -15,11 +15,13 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.apidescription.server\6.0.3\build\Microsoft.Extensions.ApiDescription.Server.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.apidescription.server\6.0.3\build\Microsoft.Extensions.ApiDescription.Server.props')" />
     <Import Project="$(NuGetPackageRoot)nswag.aspnetcore\13.16.1\build\NSwag.AspNetCore.props" Condition="Exists('$(NuGetPackageRoot)nswag.aspnetcore\13.16.1\build\NSwag.AspNetCore.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.visualstudio.azure.containers.tools.targets\1.14.0\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props" Condition="Exists('$(NuGetPackageRoot)microsoft.visualstudio.azure.containers.tools.targets\1.14.0\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore.design\3.1.26\build\netcoreapp2.0\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore.design\3.1.26\build\netcoreapp2.0\Microsoft.EntityFrameworkCore.Design.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\tranm\.nuget\packages\newtonsoft.json\9.0.1</PkgNewtonsoft_Json>
     <PkgMicrosoft_Extensions_ApiDescription_Server Condition=" '$(PkgMicrosoft_Extensions_ApiDescription_Server)' == '' ">C:\Users\tranm\.nuget\packages\microsoft.extensions.apidescription.server\6.0.3</PkgMicrosoft_Extensions_ApiDescription_Server>
+    <PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets Condition=" '$(PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets)' == '' ">C:\Users\tranm\.nuget\packages\microsoft.visualstudio.azure.containers.tools.targets\1.14.0</PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets>
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\tranm\.nuget\packages\microsoft.entityframeworkcore.tools\3.1.26</PkgMicrosoft_EntityFrameworkCore_Tools>
   </PropertyGroup>
 </Project>
