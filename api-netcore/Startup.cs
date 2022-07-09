@@ -60,6 +60,7 @@ namespace api_netcore
             app.UseStaticFiles();
 
 
+
             app.UseOpenApi();
             app.UseSwaggerUi3();
 
