@@ -56,6 +56,9 @@ namespace api_netcore
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
             app.UseOpenApi();
             app.UseSwaggerUi3();
 
