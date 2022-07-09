@@ -1,0 +1,44 @@
+name .NET CD
+
+on:
+  push:
+    branches:
+      - main
+    pull_request:
+      - main
+
+jobs:
+  test:
+  
+    runs-on: ubuntu-latest
+    
+ - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 3.1.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+      
+  deploy:
+    
+    runs-on: ubuntu-latest
+    needs: test
+    if: success() && github.ref == 'refs/heads/main'
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: App Settings Variable Substitution
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: 'appsettings.json'
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: netcore-api-postgre
+          heroku_email: tranminhtriet1402@gmail.com
+          userdocker: true   
