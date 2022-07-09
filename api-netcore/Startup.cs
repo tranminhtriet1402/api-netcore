@@ -1,11 +1,17 @@
+using api_netcore.Models;
+using api_netcore.Service.Interface;
+using api_netcore.Service.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Sieve.Models;
+using Sieve.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +32,20 @@ namespace api_netcore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            //connect string
+            services.AddDbContext<d3t2fiuclllna9Context>(options =>
+                options.UseNpgsql(Configuration.GetConnectionString("Database")));
+
+            //sieve
+            services.Configure<SieveOptions>(Configuration.GetSection("Sieve"));
+            services.AddScoped<SieveProcessor>();
+
+            //Repository
+            services.AddScoped<IRolesRepository, RolesRepository>();
+
+            //swagger
+            services.AddSwaggerDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +56,15 @@ namespace api_netcore
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
+
+            app.UseCors(x => x
+             .AllowAnyMethod()
+             .AllowAnyHeader()
+             .SetIsOriginAllowed(origin => true)
+             .AllowCredentials());
+   
             app.UseHttpsRedirection();
 
             app.UseRouting();

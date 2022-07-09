@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\api-netcore\\api-netcore\\api-netcore.csproj": {}
+    "D:\\OWN-PROJECT\\api-netcore\\api-netcore\\api-netcore.csproj": {}
   },
   "projects": {
-    "D:\\api-netcore\\api-netcore\\api-netcore.csproj": {
+    "D:\\OWN-PROJECT\\api-netcore\\api-netcore\\api-netcore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\api-netcore\\api-netcore\\api-netcore.csproj",
+        "projectUniqueName": "D:\\OWN-PROJECT\\api-netcore\\api-netcore\\api-netcore.csproj",
         "projectName": "api-netcore",
-        "projectPath": "D:\\api-netcore\\api-netcore\\api-netcore.csproj",
+        "projectPath": "D:\\OWN-PROJECT\\api-netcore\\api-netcore\\api-netcore.csproj",
         "packagesPath": "C:\\Users\\tranm\\.nuget\\packages\\",
-        "outputPath": "D:\\api-netcore\\api-netcore\\obj\\",
+        "outputPath": "D:\\OWN-PROJECT\\api-netcore\\api-netcore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tranm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,40 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.26, )"
+            },
+            "Microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[3.1.26, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.26, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.26, )"
+            },
+            "NSwag.AspNetCore": {
+              "target": "Package",
+              "version": "[13.16.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[3.1.18, )"
+            },
+            "Sieve": {
+              "target": "Package",
+              "version": "[2.5.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
