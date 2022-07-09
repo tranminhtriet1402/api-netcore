@@ -59,6 +59,7 @@ namespace api_netcore
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
+
             app.UseOpenApi();
             app.UseSwaggerUi3();
 
