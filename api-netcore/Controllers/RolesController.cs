@@ -1,5 +1,6 @@
 ﻿using api_netcore.DTO;
 using api_netcore.Service.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,6 +19,7 @@ namespace api_netcore.Controllers
         }
         // GET: api/<RolesController>
         [HttpGet]
+        [Authorize]
         public IActionResult GetAll(string filter, string sort, int page, int pageSize)
         {
             if (page == 0 || pageSize == 0)
@@ -40,6 +42,7 @@ namespace api_netcore.Controllers
 
         // GET api/<RolesController>/5
         [HttpGet("{id}")]
+        [Authorize]
         public IActionResult GetRoleById(Guid id)
         {
             try
@@ -66,7 +69,8 @@ namespace api_netcore.Controllers
 
         // POST api/<RolesController>
         [HttpPost]
-        public IActionResult postRole([Bind("Name")] RolesDTO role)
+        [Authorize]
+        public IActionResult postRole([Bind("Name")] Roles role)
         {
             try
             {
@@ -83,7 +87,8 @@ namespace api_netcore.Controllers
 
         // PUT api/<RolesController>/5
         [HttpPut("{id}")]
-        public IActionResult UpdateRole(Guid id, RolesDTO role)
+        [Authorize]
+        public IActionResult UpdateRole(Guid id, Roles role)
         {
             try
             {
@@ -102,6 +107,7 @@ namespace api_netcore.Controllers
 
         // DELETE api/<RolesController>/5
         [HttpDelete("{id}")]
+        [Authorize]
         public IActionResult Delete(Guid id)
         {
             try

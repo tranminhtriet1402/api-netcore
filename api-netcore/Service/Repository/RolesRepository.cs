@@ -18,10 +18,10 @@ namespace api_netcore.Service.Repository
             _context = context;
             _sieveProcessor = sieveProcessor;
         }
-        public List<RolesDTO> getAllRoles(string filter, string sort, int page, int pageSize)
+        public List<DTO.Roles> getAllRoles(string filter, string sort, int page, int pageSize)
         {
 
-            var lst_roles = _context.Roles.Select(x => new RolesDTO
+            var lst_roles = _context.Roles.Select(x => new DTO.Roles
             {
                 Id = x.Id,
                 Name = x.Name,
@@ -43,12 +43,12 @@ namespace api_netcore.Service.Repository
 
         }
 
-        public RolesDTO getRolesId(Guid id)
+        public DTO.Roles getRolesId(Guid id)
         {
             var role = _context.Roles.SingleOrDefault(x => x.Id == id);
             if (role != null)
             {
-                return new RolesDTO
+                return new DTO.Roles
                 {
                     Id = role.Id,
                     Name = role.Name,
@@ -59,9 +59,9 @@ namespace api_netcore.Service.Repository
 
 
         }
-        public RolesDTO addRole(RolesDTO role)
+        public DTO.Roles addRole(DTO.Roles role)
         {
-            var _role = new Roles
+            var _role = new DTO.Roles
             {
                 Id = Guid.NewGuid(),
                 Name = role.Name,
@@ -69,11 +69,11 @@ namespace api_netcore.Service.Repository
 
             _context.Add(_role);
             _context.SaveChanges();
-            return new RolesDTO
+            return new DTO.Roles
             {
                 Id = _role.Id,
                 Name = _role.Name,
-                create_by = _role.CreatedBy
+                create_by = _role.create_by
             };
 
         }
@@ -91,7 +91,7 @@ namespace api_netcore.Service.Repository
 
 
 
-        public void updateRole(Guid id, RolesDTO role)
+        public void updateRole(Guid id, DTO.Roles role)
         {
             var _role = _context.Roles.SingleOrDefault(x => x.Id == id);
             if (_role != null)

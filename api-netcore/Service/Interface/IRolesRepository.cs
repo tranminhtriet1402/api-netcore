@@ -6,10 +6,10 @@ namespace api_netcore.Service.Interface
 {
     public interface IRolesRepository
     {
-        List<RolesDTO> getAllRoles(string filter, string sort, int page, int pageSize);
-        RolesDTO getRolesId(Guid id);
-        RolesDTO addRole(RolesDTO role);
-        void updateRole(Guid id, RolesDTO role);
+        List<Roles> getAllRoles(string filter, string sort, int page, int pageSize);
+        Roles getRolesId(Guid id);
+        Roles addRole(Roles role);
+        void updateRole(Guid id, Roles role);
         void deleteRole(Guid id);
     }
 }

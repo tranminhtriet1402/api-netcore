@@ -9,9 +9,16 @@ namespace api_netcore.Models
 {
     public partial class Roles
     {
+        public Roles()
+        {
+            User = new HashSet<User>();
+        }
+
         public Guid Id { get; set; }
         public string Name { get; set; }
         public Guid? CreatedBy { get; set; }
         public DateTime? CreatedAt { get; set; }
+
+        public virtual ICollection<User> User { get; set; }
     }
 }

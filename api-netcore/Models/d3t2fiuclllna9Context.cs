@@ -22,6 +22,7 @@ namespace api_netcore.Models
         public virtual DbSet<Permissions> Permissions { get; set; }
         public virtual DbSet<PermissionsRoles> PermissionsRoles { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
+        public virtual DbSet<User> User { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -96,6 +97,42 @@ namespace api_netcore.Models
                 entity.Property(e => e.Name)
                     .HasColumnName("name")
                     .HasColumnType("character varying");
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.ToTable("user");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Email)
+                    .HasColumnName("email")
+                    .HasColumnType("character varying");
+
+                entity.Property(e => e.FirstName)
+                    .HasColumnName("first_name")
+                    .HasColumnType("character varying");
+
+                entity.Property(e => e.LastName)
+                    .HasColumnName("last_name")
+                    .HasColumnType("character varying");
+
+                entity.Property(e => e.MiddleName)
+                    .HasColumnName("middle_name")
+                    .HasColumnType("character varying");
+
+                entity.Property(e => e.Password)
+                    .HasColumnName("password")
+                    .HasColumnType("character varying");
+
+                entity.Property(e => e.RoleId).HasColumnName("role_id");
+
+                entity.HasOne(d => d.Role)
+                    .WithMany(p => p.User)
+                    .HasForeignKey(d => d.RoleId)
+                    .HasConstraintName("fk_roles");
             });
 
             OnModelCreatingPartial(modelBuilder);
